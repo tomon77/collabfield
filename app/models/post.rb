@@ -10,3 +10,5 @@ end
 class Category < ApplicationRecord
   has_many :posts
 end
+
+default_scope -> { includes(:user).order(created_at: :desc) }
